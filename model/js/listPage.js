@@ -1,6 +1,7 @@
 //*Tạo cấu trúc các biến phân trang
 let thisPage = 1;
 let limitProduct = 9;
+if (screen.width <= 768) limitProduct = 6;
 let listCard = document.querySelectorAll(".card-item");
 
 function loadItem() {
