@@ -1,6 +1,6 @@
 //*Tạo cấu trúc các biến phân trang
 let thisPage = 1;
-let limitProduct = 12;
+let limitProduct = 9;
 let listCard = document.querySelectorAll(".card-item");
 
 function loadItem() {
@@ -18,20 +18,20 @@ function loadItem() {
   });
   listPage();
 }
-
 loadItem();
 
 //*Kiểm tra tổng số trang
 function listPage() {
   let tatolPage = Math.ceil(listCard.length / limitProduct);
   for (let index = 1; index <= tatolPage; index++) {
-    let newPage = document.createElement("li");
+    let newPage = document.createElement("a");
     newPage.innerText = index;
     if (index == thisPage) {
       newPage.classList.add("active");
     }
     document.querySelector("#listPage").appendChild(newPage);
     newPage.setAttribute("onclick", "changePage(" + index + ")");
+    newPage.setAttribute("href", "#first-title-home");
   }
 }
 
